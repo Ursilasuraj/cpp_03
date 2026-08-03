@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 08:01:27 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/06/01 15:44:13 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/08/03 18:07:09 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,11 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (amount <= static_cast<unsigned int>(_hitPoints))
 		_hitPoints = _hitPoints - amount;
 	else
+	{
 		_hitPoints = 0;
-	
 		std::cout << "ClapTrap " << _name << " takes " << amount << " points of damage! "
 			<< "Has " << _hitPoints << " points after." << std::endl;
+	}
 	if (!isOperational())
 		std::cout << "ClapTrap " << _name << " has been destroyed!" << std::endl;
 }

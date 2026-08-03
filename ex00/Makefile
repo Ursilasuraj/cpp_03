@@ -6,7 +6,7 @@
 #    By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/23 09:24:37 by uvadakku          #+#    #+#              #
-#    Updated: 2026/05/25 09:28:08 by uvadakku         ###   ########.fr        #
+#    Updated: 2026/08/03 17:45:00 by uvadakku         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -I includes
 
-NAME = clap_trap
+NAME = ex00
 
 SRC_DIR = srcs
 OBJ_DIR = objs
 
 SRCS = main.cpp \
-							ClapTrap.cpp \
+		ClapTrap.cpp \
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
 

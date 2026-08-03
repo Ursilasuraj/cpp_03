@@ -6,7 +6,7 @@
 #    By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/29 11:13:44 by uvadakku          #+#    #+#              #
-#    Updated: 2026/05/30 05:08:08 by uvadakku         ###   ########.fr        #
+#    Updated: 2026/08/03 18:00:38 by uvadakku         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -I includes
 
-NAME = scav_trap
+NAME = ex01
 
 SRC_DIR = srcs
 OBJ_DIR = objs
