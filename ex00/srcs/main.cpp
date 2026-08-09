@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 07:31:45 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/05/26 09:07:50 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/08/09 20:21:55 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,23 @@
 
 int main()
 {
-	ClapTrap defaultRobot;
-	ClapTrap robot("CL4P");
-	ClapTrap robotCopy(robot);
-	defaultRobot = robot;
+	ClapTrap a("CL4P-TP");
+	ClapTrap b("FR4G-TP");
 	
-	robot.attack("enemy");
-	robot.takeDamage(5);
-	robot.beRepaired(3);
+	a.attack("an enemy");
+	b.takeDamage(3);
+	b.beRepaired(5);
+	
+	//Drain CL4P-TP's energy
+	for (int i = 0; i < 10; i++)
+		a.attack("dummy");
+	//these shoud fail(no energy left);
+	a.attack("dummy");
+	a.attack("dummy");
 
+	b.takeDamage(12); 
+	//should fail(dead)
+	b.beRepaired(5);
+	
 	return (0);
 }
