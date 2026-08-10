@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 07:31:45 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/08/09 20:21:55 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/08/10 14:46:52 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int main()
 	a.attack("dummy");
 
 	b.takeDamage(12); 
-	//should fail(dead)
 	b.beRepaired(5);
 	
 	return (0);

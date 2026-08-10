@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 07:31:45 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/05/31 15:28:41 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/08/10 18:09:59 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ void testSpecialAction(ScavTrap &scav)
 
 int main()
 {
-	std::cout << "=== ScavTrap/ClapTrap comprehensive tester ===\n\n";
+	std::cout << "=== ScavTrap/ClapTrap Actions ==\n\n";
 	{
-		std::cout << "-- Construction chaining (observe order) --\n";
+		std::cout << "-- Construction chaining --\n";
 		ScavTrap scav("S-4V4G");
 		ClapTrap clap("CL4P");
 		testAttack(scav, clap);
