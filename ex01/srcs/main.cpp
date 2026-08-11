@@ -6,65 +6,52 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 07:31:45 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/08/10 18:09:59 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/08/11 18:47:28 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-void testAttack(ScavTrap &scav, ClapTrap &clap)
-{
-	std::cout << "\n-- Attack action --\n";
-	scav.attack("enemy");
-	clap.attack("target");
-}
-
-void testTakeDamage(ScavTrap &scav, ClapTrap &clap)
-{
-	std::cout << "\n-- Take damage action --\n";
-	scav.takeDamage(20);
-	clap.takeDamage(5);
-}
-
-void testRepair(ScavTrap &scav, ClapTrap &clap)
-{
-	std::cout << "\n-- Repair action --\n";
-	scav.beRepaired(10);
-	clap.beRepaired(3);
-}
-
-void testSpecialAction(ScavTrap &scav)
-{
-	std::cout << "\n-- Special action (guardGate) --\n";
-	scav.guardGate();
-}
+#include <iostream>
 
 int main()
 {
-	std::cout << "=== ScavTrap/ClapTrap Actions ==\n\n";
+	std::cout << "\n=== ClapTrap: basic actions ===" << std::endl;
+	ClapTrap clappy("Clappy");
+
+	clappy.attack("a training bot");
+	clappy.takeDamage(5);
+	clappy.beRepaired(3);
+	clappy.takeDamage(8);
+	clappy.beRepaired(5); // should fail (dead)
+
+	std::cout << "\n=== ScavTrap: construction, attack override and special ability ===" << std::endl;
+	ScavTrap scavy("Scavy");
+
+	scavy.attack("an intruder");
+	scavy.guardGate();
+
+	std::cout << "\n=== ScavTrap: copy and assignment ===" << std::endl;
+	ScavTrap copyScav(scavy);   // copy constructor
+	copyScav.attack("copied target");
+
+	ScavTrap temp("Temp");      // temporary object
+	temp = scavy;               // assignment operator
+	temp.attack("assigned target");
+
+	std::cout << "\n=== Nested scope: show construction/destruction chaining ===" << std::endl;
 	{
-		std::cout << "-- Construction chaining --\n";
-		ScavTrap scav("S-4V4G");
-		ClapTrap clap("CL4P");
-		testAttack(scav, clap);
-		testTakeDamage(scav, clap);
-		testRepair(scav, clap);
-		testSpecialAction(scav);
-		std::cout << "\n-- Copy & assignment --\n";
-		ScavTrap scavCopy(scav);
-		ScavTrap scavAssigned;
-		scavAssigned = scav;
-		std::cout << "\n-- Energy exhaustion test (will run many attacks) --\n";
-		for (int i = 0; i < 60; ++i)
-			scav.attack("training dummy");
-		std::cout << "\n-- Death and repair prevention --\n";
-		scavCopy.takeDamage(200);
-		scavCopy.beRepaired(10);
-		std::cout << "\n-- ScavTrap special behaviour --\n";
-		scav.guardGate();
-		std::cout << "\n-- End of local scope: destructors for scav, clap will run (check order) --\n";
-	}
-	std::cout << "\n=== Tester finished ===\n";
+			ClapTrap innerClap("InnerClap");
+			ScavTrap innerScav("InnerScav");
+
+			innerClap.attack("local bot");
+			innerScav.attack("local intruder");
+			innerScav.guardGate();
+	} // innerClap and innerScav destruct here
+
+	std::cout << "\n=== End of tests ===" << std::endl;
+
 	return 0;
 }
+
