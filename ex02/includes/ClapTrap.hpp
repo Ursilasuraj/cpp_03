@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 07:56:50 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/06/01 16:23:50 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/08/12 17:02:24 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,21 @@
 class ClapTrap
 {
 	protected:
-		std::string _name;
-		int _hitPoints;
-		int _energyPoints;
-		int _attackDamage;
-	public:
-	  ClapTrap();
-			ClapTrap(std::string name);
-			ClapTrap(const ClapTrap& other);
-			ClapTrap &operator=(const ClapTrap &other);
-		 ~ClapTrap();
-			
-		void attack(const std::string& target); 
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		std::string name;
+		int hitPoints;
+		int energyPoints;
+		int attackDamage;
 
-		bool isOperational() const { return _hitPoints > 0; }
+	public:
+		ClapTrap();
+		ClapTrap(const std::string &name);
+		ClapTrap(const ClapTrap &other);
+		ClapTrap &operator=(const ClapTrap &other);
+		~ClapTrap();
+	
+	void attack(const std::string& target); 
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
 };
 
 #endif
-
