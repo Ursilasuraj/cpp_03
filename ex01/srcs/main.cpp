@@ -6,13 +6,12 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 07:31:45 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/08/12 16:49:59 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/08/20 17:28:00 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 
+#include "ScavTrap.hpp"
 #include <iostream>
 
 int main()
@@ -28,7 +27,6 @@ int main()
 
 	std::cout << "\n=== ScavTrap: construction, attack override and special ability ===" << std::endl;
 	ScavTrap scavy("Scavy");
-
 	scavy.attack("an intruder");
 	scavy.guardGate();
 
