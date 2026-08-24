@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 07:31:45 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/08/21 17:31:31 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/08/12 17:53:59 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void testBasicActions(FragTrap &frag, ClapTrap &clap)
     clap.attack("target");
 
     frag.takeDamage(20);
-    clap.takeDamage(5);  //HP decrease by x, EP->no change, takedamage differs from attackda
+    clap.takeDamage(5);
 
     frag.beRepaired(10);
-    clap.beRepaired(3); //HP increase by x, EP ->dec by 1
+    clap.beRepaired(3);
 }
 
 void testSpecialAbility(FragTrap &frag)
@@ -36,10 +36,12 @@ void testSpecialAbility(FragTrap &frag)
 
 void testCopyAndAssignment(FragTrap &frag)
 {
+    std::cout << "\n-- Copy & assignment tests --\n";
+
     std::cout << "\nFragTrap copy & assignment:\n";
     FragTrap fragCopy(frag);
-    FragTrap fragAssigned;  //default
-    fragAssigned = frag; 
+    FragTrap fragAssigned;
+    fragAssigned = frag;
 }
 
 void testEnergyExhaustion(FragTrap &frag)
@@ -63,7 +65,7 @@ int main()
         std::cout << "-- Construction chaining --\n";
         FragTrap frag("Frodo");
 		ScavTrap scav("Scavy");
-        ClapTrap clap("Clappy");
+        ClapTrap clap("Sam");
 
         testBasicActions(frag, clap);
         testSpecialAbility(frag);
@@ -74,5 +76,6 @@ int main()
         std::cout << "\n-- End of scope: destructors will run --\n";
     }
 
+    std::cout << "\n=== Tester finished ===\n";
     return 0;
 }
