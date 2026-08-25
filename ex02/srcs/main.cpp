@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 07:31:45 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/08/21 17:31:31 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/08/24 15:52:57 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 void testBasicActions(FragTrap &frag, ClapTrap &clap)
 {
     std::cout << "\n-- Basic actions --\n";
-    frag.attack("orc");
+    frag.attack("monsta");
     clap.attack("target");
 
     frag.takeDamage(20);

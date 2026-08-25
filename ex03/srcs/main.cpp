@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 07:31:45 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/08/24 18:13:24 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/08/25 14:27:37 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int main()
     {
         std::cout << "-- Construction chaining --\n";
         DiamondTrap dia("eva");
+        DiamondTrap d;
         FragTrap frag("Frodo");
 		ScavTrap scav("Scavy");
         ClapTrap clap("Clappy");

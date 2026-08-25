@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 07:31:45 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/08/20 17:28:00 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/08/24 18:05:37 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,9 @@ int main()
 			innerClap.attack("local bot");
 			innerScav.attack("local intruder");
 			innerScav.guardGate();
-	} // innerClap and innerScav destruct here
+	} // innerClap and id::cout << "DiamondTrap " << _name << " constructed" << std::endl; 
+
+} nnerScav destruct here
 
 	std::cout << "\n=== End of tests ===" << std::endl;
 
